@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deposition Preparation Summary - Evans v. Evans</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px;
+            line-height: 1.6;
+            color: #333;
+        }
+        h1 {
+            color: #1a365d;
+            border-bottom: 3px solid #2c5282;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #2c5282;
+            margin-top: 40px;
+            border-bottom: 1px solid #cbd5e0;
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #4a5568;
+            margin-top: 30px;
+        }
+        h4 {
+            color: #718096;
+            margin-top: 25px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #cbd5e0;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #edf2f7;
+            font-weight: 600;
+        }
+        tr:nth-child(even) {
+            background-color: #f7fafc;
+        }
+        .risk-high {
+            background-color: #fed7d7;
+            color: #c53030;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        .risk-med {
+            background-color: #fefcbf;
+            color: #b7791f;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        .strategy-box {
+            background-color: #e6fffa;
+            border-left: 4px solid #38b2ac;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .warning-box {
+            background-color: #fff5f5;
+            border-left: 4px solid #e53e3e;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .info-box {
+            background-color: #ebf8ff;
+            border-left: 4px solid #3182ce;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .qa-section {
+            background-color: #f7fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .question {
+            color: #c53030;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .answer {
+            color: #276749;
+            margin-bottom: 10px;
+            padding-left: 20px;
+            border-left: 3px solid #48bb78;
+        }
+        .rationale {
+            color: #718096;
+            font-style: italic;
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+        .do-dont-table td:first-child {
+            background-color: #c6f6d5;
+        }
+        .do-dont-table td:last-child {
+            background-color: #fed7d7;
+        }
+        blockquote {
+            background-color: #f7fafc;
+            border-left: 4px solid #a0aec0;
+            margin: 20px 0;
+            padding: 15px;
+            font-style: italic;
+        }
+        .header-info {
+            background-color: #2c5282;
+            color: white;
+            padding: 20px;
+            margin: -40px -40px 30px -40px;
+        }
+        .header-info h1 {
+            color: white;
+            border-bottom: none;
+            margin: 0;
+        }
+        .confidential {
+            color: #fc8181;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        /* Floating TOC */
+        .toc-container {
+            position: fixed;
+            right: 20px;
+            top: 100px;
+            width: 220px;
+            max-height: calc(100vh - 140px);
+            overflow-y: auto;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            font-size: 0.85em;
+            z-index: 1000;
+        }
+        .toc-container h4 {
+            margin: 0 0 10px 0;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #2c5282;
+            color: #2c5282;
+        }
+        .toc-container ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .toc-container li {
+            margin: 6px 0;
+        }
+        .toc-container a {
+            color: #4a5568;
+            text-decoration: none;
+            display: block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            transition: background-color 0.2s;
+        }
+        .toc-container a:hover {
+            background-color: #edf2f7;
+            color: #2c5282;
+        }
+        .toc-container .toc-h2 {
+            font-weight: 600;
+        }
+        .toc-container .toc-h3 {
+            padding-left: 15px;
+            font-size: 0.9em;
+            color: #718096;
+        }
+        /* Adjust body to make room for TOC */
+        @media (min-width: 1200px) {
+            body {
+                margin-right: 260px;
+            }
+        }
+        @media (max-width: 1199px) {
+            .toc-container {
+                display: none;
+            }
+        }
+        @media print {
+            body {
+                padding: 20px;
+                margin-right: 0;
+            }
+            .header-info {
+                margin: -20px -20px 20px -20px;
+            }
+            .toc-container {
+                display: none;
+            }
+        }
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Offset for anchor links (accounts for any fixed headers) */
+        h2[id], h3[id] {
+            scroll-margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Floating Table of Contents -->
+<nav class="toc-container">
+    <h4>Contents</h4>
+    <ul>
+        <li class="toc-h2"><a href="#case-overview">I. Case Overview</a></li>
+        <li class="toc-h2"><a href="#contested-issues">II. Contested Issues</a></li>
+        <li class="toc-h2"><a href="#tennessee-law">III. Tennessee Law</a></li>
+        <li class="toc-h2"><a href="#hostile-questions">IV. Hostile Questions</a></li>
+        <li class="toc-h3"><a href="#cat-adoption">Adoption</a></li>
+        <li class="toc-h3"><a href="#cat-financial">Financial</a></li>
+        <li class="toc-h3"><a href="#cat-unfitness">Unfitness Claims</a></li>
+        <li class="toc-h3"><a href="#cat-abuse">Abuse Allegations</a></li>
+        <li class="toc-h3"><a href="#cat-separation">Separation</a></li>
+        <li class="toc-h3"><a href="#cat-credibility">Credibility</a></li>
+        <li class="toc-h3"><a href="#cat-motive">Motive</a></li>
+        <li class="toc-h2"><a href="#high-risk-qa">V. High-Risk Q&amp;A</a></li>
+        <li class="toc-h2"><a href="#medium-risk-qa">VI. Medium-Risk Q&amp;A</a></li>
+        <li class="toc-h2"><a href="#ground-rules">VII. Ground Rules</a></li>
+        <li class="toc-h2"><a href="#summary">VIII. Summary</a></li>
+        <li class="toc-h2"><a href="#documents">IX. Documents to Review</a></li>
+    </ul>
+</nav>
+
+<div class="header-info">
+    <h1>Deposition Preparation Summary</h1>
+    <p><strong>Case:</strong> Evans v. Evans | Docket No. 25D828 | Division III<br>
+    <strong>Court:</strong> Circuit Court for Hamilton County, Tennessee<br>
+    <strong>Prepared for:</strong> Defendant, Jessie Elizabeth LaPlue Evans<br>
+    <strong>Date:</strong> March 2026<br>
+    <span class="confidential">Attorney-Client Privileged / Work Product</span></p>
+</div>
+
+<h2 id="case-overview">I. Case Overview</h2>
+
+<h3>Parties</h3>
+<table>
+    <tr>
+        <th>Role</th>
+        <th>Name</th>
+        <th>Counsel</th>
+    </tr>
+    <tr>
+        <td><strong>Plaintiff</strong> (Husband)</td>
+        <td>Daniel Jonce Evans</td>
+        <td>Grant, Konvalinka &amp; Harrison, P.C. (Katherine Lentz)</td>
+    </tr>
+    <tr>
+        <td><strong>Defendant</strong> (Wife)</td>
+        <td>Jessie Elizabeth LaPlue Evans</td>
+        <td>Yates &amp; Wheland (Tessa Creighton)</td>
+    </tr>
+</table>
+
+<h3>Key Timeline</h3>
+<table>
+    <tr>
+        <th>Date</th>
+        <th>Event</th>
+    </tr>
+    <tr>
+        <td>Late 2020</td>
+        <td>Jessie meets Daniel and children (then ages 2 and 4)</td>
+    </tr>
+    <tr>
+        <td>November 20, 2021</td>
+        <td>Marriage</td>
+    </tr>
+    <tr>
+        <td>November 2024</td>
+        <td>Separation</td>
+    </tr>
+    <tr>
+        <td>November 26, 2024</td>
+        <td>Last contact with children (visit incident)</td>
+    </tr>
+    <tr>
+        <td>May 20, 2025</td>
+        <td>Daniel files Complaint for Divorce</td>
+    </tr>
+    <tr>
+        <td>June 4, 2025</td>
+        <td>Jessie files Counter-Complaint</td>
+    </tr>
+    <tr>
+        <td>February 12, 2026</td>
+        <td>Jessie files Motion to Appoint Guardian ad Litem</td>
+    </tr>
+</table>
+
+<h3>The Children</h3>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>DOB</th>
+        <th>Current Age</th>
+    </tr>
+    <tr>
+        <td>Henry Daniel Evans</td>
+        <td>February 2, 2016</td>
+        <td>10 years old</td>
+    </tr>
+    <tr>
+        <td>Harper Grace Evans</td>
+        <td>May 19, 2018</td>
+        <td>7 years old</td>
+    </tr>
+</table>
+
+<div class="warning-box">
+    <strong>Critical Fact:</strong> The children are from Daniel's first marriage to Rachel Held Evans (author, deceased 2019). <strong>Jessie did NOT adopt them.</strong> This is the central legal issue affecting her standing.
+</div>
+
+<h3>Financial Summary</h3>
+<table>
+    <tr>
+        <th>Category</th>
+        <th>Daniel</th>
+        <th>Jessie</th>
+    </tr>
+    <tr>
+        <td>Primary Income Source</td>
+        <td>Royalties from deceased wife Rachel's books (~$75k/yr avg)</td>
+        <td>ESL Teacher (~$37k/yr as of 2025)</td>
+    </tr>
+    <tr>
+        <td>Income During Marriage</td>
+        <td>~$299k total (2021-2024)</td>
+        <td>~$6,250 total (2022-2024)</td>
+    </tr>
+    <tr>
+        <td>Children's Benefits</td>
+        <td>~$3,700/mo SS death benefits (controlled by Daniel)</td>
+        <td>N/A</td>
+    </tr>
+</table>
+
+<h4>Major Assets at Issue</h4>
+<table>
+    <tr>
+        <th>Property</th>
+        <th>Est. Value</th>
+        <th>Notes</th>
+    </tr>
+    <tr>
+        <td>601 Cap Elsea Road (marital home)</td>
+        <td>~$918,800</td>
+        <td>Daniel's residence</td>
+    </tr>
+    <tr>
+        <td>598 Highland Drive (rental)</td>
+        <td>~$249,800</td>
+        <td>Rental property</td>
+    </tr>
+    <tr>
+        <td>1131 Stringers Ridge Rd (condo)</td>
+        <td>~$229,000</td>
+        <td>Jessie's current residence</td>
+    </tr>
+    <tr>
+        <td>Investment accounts</td>
+        <td>~$252,000</td>
+        <td>Various brokerage/retirement</td>
+    </tr>
+</table>
+
+<h2 id="contested-issues">II. Main Contested Issues</h2>
+
+<h3>1. Stepparent Visitation Rights</h3>
+<p>Jessie seeks continued contact with children under Tenn. Code Ann. &sect; 36-6-303. Daniel opposes, arguing she has no legal standing since she never adopted the children.</p>
+
+<h3>2. Guardian ad Litem</h3>
+<p>Jessie filed motion to appoint GAL (Feb 12, 2026). Daniel opposes, citing &sect; 36-4-132(a): children not "of the marriage."</p>
+
+<h3>3. Property Classification</h3>
+<p>Daniel claims most assets are separate/premarital (Rachel's estate). Jessie claims marital property status based on Daniel's representations during marriage that assets were "ours."</p>
+
+<h3>4. Inappropriate Marital Conduct</h3>
+<p>Jessie alleges: emotional abuse, coercive control, financial manipulation, deception. Daniel denies.</p>
+
+<h3>5. Children's Welfare &amp; Daniel's Fitness</h3>
+<p>Jessie alleges Daniel neglected children's medical/developmental needs. Daniel claims children are "unharmed and thriving" without Jessie contact (over 1 year).</p>
+
+<h2 id="tennessee-law">III. Relevant Tennessee Law</h2>
+
+<h3>Stepparent Visitation &ndash; T.C.A. &sect; 36-6-303</h3>
+
+<div class="info-box">
+<p><strong>(a)(1)</strong> The court may order stepparent visitation when:</p>
+<ul>
+    <li>Child resided with stepparent &check; (~3 years)</li>
+    <li>Stepparent provided financial support &cross; (minimal/none)</li>
+    <li>Stepparent had ongoing relationship &check;</li>
+    <li>Visitation is in child's best interest (to be determined)</li>
+</ul>
+<p><strong>(c)</strong> There is a <strong>rebuttable presumption</strong> that the biological parent's decision regarding visitation is NOT harmful to the child.</p>
+<p><strong>(d)</strong> A "best interest" finding only occurs after the petitioner proves "substantial harm" from the parent's decisions.</p>
+</div>
+
+<h3>Key Precedent</h3>
+<blockquote>
+<strong>Clark v. Johnson</strong>, 2018 WL 2411203 (Tenn. Ct. App. 2018): "It is well established in Tennessee that parents, barring a judicial finding of a risk of substantial harm to the children involved, enjoy a fundamental constitutional right to raise their children as they see fit."
+</blockquote>
+
+<blockquote>
+<strong>In re Adoption of A.M.H.</strong>, 215 S.W.3d 793 (Tenn. 2007): Parental rights are constitutionally protected and require clear and convincing evidence to overcome.
+</blockquote>
+
+<h3>Guardian ad Litem &ndash; T.C.A. &sect; 36-4-132(a)</h3>
+<p>Applies to "minor children <strong>of the marriage</strong>" &mdash; Daniel argues this excludes his children from prior marriage.</p>
+
+<h3>TN Supreme Court Rule 40(A), Section 3(b)</h3>
+<blockquote>
+"[C]ourts <strong>should not routinely appoint</strong> guardians ad litem in custody proceedings. Rather, the court's discretion to appoint guardians ad litem shall be exercised sparingly."
+</blockquote>
+
+<div class="warning-box">
+<strong>Jessie's Core Legal Problem:</strong> Under T.C.A. &sect; 36-6-303(c), there is a rebuttable presumption that Daniel's decision to deny visitation is NOT harmful. Jessie must prove: (1) that denying visitation causes <em>substantial harm</em> to the children, and (2) that visitation is in the children's best interest. Daniel's strongest argument: "The children have been fine for over a year without her. They're thriving."
+</div>
+
+<h2 id="hostile-questions">IV. Likely Hostile Deposition Questions</h2>
+
+<p>Plaintiff's counsel (Katherine Lentz) will likely press hard on these areas. Given 2 hours, expect 8-12 major topic areas with follow-up questions designed to lock in testimony and create impeachment opportunities.</p>
+
+<h3 id="cat-adoption">Category 1: Legal Standing &amp; Adoption</h3>
+<table>
+    <tr>
+        <th>#</th>
+        <th>Likely Question</th>
+        <th>Purpose</th>
+        <th>Risk</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>"You never adopted Henry and Harper, correct?"</td>
+        <td>Establish lack of legal parent status</td>
+        <td><span class="risk-high">HIGH</span></td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>"At any point did you file adoption paperwork?"</td>
+        <td>Emphasize inaction</td>
+        <td><span class="risk-high">HIGH</span></td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>"What steps did you actually take toward adoption?"</td>
+        <td>Force vague answer or admission of none</td>
+        <td><span class="risk-med">MED</span></td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>"Daniel says you avoided adoption to avoid responsibility. Is that accurate?"</td>
+        <td>Create conflict/emotional response</td>
+        <td><span class="risk-high">HIGH</span></td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>"You're not their legal mother, are you?"</td>
+        <td>Force concession</td>
+        <td><span class="risk-high">HIGH</span></td>
+    </tr>
+</table>
+
+<div class="strategy-box">
+<strong>Defense Strategy:</strong> Acknowledge legal reality calmly. Pivot to: "I functioned as their mother and primary caregiver for three years. Daniel encouraged me to take on that role and the children called me 'Mommy.'" Note that Daniel himself stated in interrogatories the children called her "Mommy, Mom, Mommy Jessie."
+</div>
+
+<h3 id="cat-financial">Category 2: Financial Contributions</h3>
+<table>
+    <tr>
+        <th>#</th>
+        <th>Likely Question</th>
+        <th>Purpose</th>
+        <th>Risk</th>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td>"How much money did you contribute to the children's expenses?"</td>
+        <td>Expose minimal financial support</td>
+        <td><span class="risk-high">HIGH</span></td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td>"You earned approximately $2,600 in 2022, correct?"</td>
+        <td>Lock in low income figures</td>
+        <td><span class="risk-med">MED</span></td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td>"Daniel paid for essentially everything, didn't he?"</td>
+        <td>Force concession</td>
+        <td><span class="risk-high">HIGH</span></td>
+    </tr>
+    <tr>
+        <td>9</td>
+        <td>"You used Daniel's credit card for purchases, correct?"</td>
+        <td>Emphasize financial dependence</td>
+        <td><span class="risk-med">MED</span></td>
+    </tr>
+    <tr>
+        <td>10</td>
+        <td>"What financial support did you provide that didn't come from Daniel's accounts?"</td>
+        <td>Corner into admission</td>
+        <td><span class="risk-high">HIGH</span></td>
+    </tr>
+</table>
+
+<div class="strategy-box">
+<strong>Defense Strategy:</strong> Frame contributions as <strong>non-monetary</strong>. "I contributed through thousands of hours of caregiving, advocacy for their medical needs, managing household responsibilities, and emotional support. In a traditional marriage, these contributions have value even when one spouse earns less." Reference that Daniel himself said "meal preparation was shared" and she handled swimming lessons, martial arts, shopping, etc.
+</div>
+
+<h3 id="cat-unfitness">Category 3: Allegations of Daniel's Unfitness</h3>
+<table>
+    <tr>
+        <th>#</th>
+        <th>Likely Question</th>
+        <th>Purpose</th>
+        <th>Risk</th>
+    </tr>
+    <tr>
+        <td>11</td>
+        <td>"You claim Daniel is neglectful&mdash;do you have any CPS reports?"</td>
+        <td>Expose lack of formal documentation</td>
+        <td><span class="risk-high">HIGH</span></td>
+    </tr>
+    <tr>
+        <td>12</td>
+        <td>"Did you ever call the police about Daniel's treatment of the children?"</td>
+        <td>Same</td>
+        <td><span class="risk-high">HIGH</span></td>
+    </tr>
+    <tr>
+        <td>13</td>
+        <td>"If Daniel was so neglectful, why did you stay for three years?"</td>
+        <td>Undermine credibility</td>
+        <td><span class="risk-high">HIGH</span></td>
+    </tr>
+    <tr>
+        <td>14</td>
+        <td>"You claim a child screamed they wanted to die&mdash;did you report this to anyone?"</td>
+        <td>Test consistency/documentation</td>
+        <td><span class="risk-high">HIGH</span></td>
+    </tr>
+    <tr>
+        <td>15</td>
+        <td>"Can you name ONE medical professional who found Daniel neglectful?"</td>
+        <td>Challenge expert support</td>
+        <td><span class="risk-high">HIGH</span></td>
+    </tr>
+    <tr>
+        <td>16</td>
+        <td>"The children are enrolled in school, correct?"</td>
+        <td>Show basic care being met</td>
+        <td><span class="risk-med">MED</span></td>
+    </tr>
+    <tr>
+        <td>17</td>
+        <td>"They have a pediatrician, correct?"</td>
+        <td>Same</td>
+        <td><span class="risk-med">MED</span></td>
+    </tr>
+    <tr>
+        <td>18</td>
+        <td>"Daniel says the children are 'unharmed and thriving' since separation. Do you dispute this?"</td>
+        <td>Force speculation or concession</td>
+        <td><span class="risk-high">HIGH</span></td>
+    </tr>
+</table>
+
+<div class="strategy-box">
+<strong>Defense Strategy:</strong> Be specific. Reference the interrogatory where Kathleen Gleason is named as witness who "saw the before and after of the children's standards of care after I became involved." Reference Daniel's own admission that early intervention was recommended but he didn't act on it. Avoid hyperbole&mdash;stick to documented examples.
+</div>
+
+<h3 id="cat-abuse">Category 4: Emotional Abuse Allegations</h3>
+<table>
+    <tr>
+        <th>#</th>
+        <th>Likely Question</th>
+        <th>Purpose</th>
+        <th>Risk</th>
+    </tr>
+    <tr>
+        <td>19</td>
+        <td>"You allege emotional abuse&mdash;did you ever seek a protection order?"</td>
+        <td>Expose lack of formal action</td>
+        <td><span class="risk-med">MED</span></td>
+    </tr>
+    <tr>
+        <td>20</td>
+        <td>"You continued living with Daniel for three years after this alleged abuse began?"</td>
+        <td>Undermine severity</td>
+        <td><span class="risk-high">HIGH</span></td>
+    </tr>
+    <tr>
+        <td>21</td>
+        <td>"Can you identify ONE text or email where Daniel threatened you?"</td>
+        <td>Challenge documentation</td>
+        <td><span class="risk-high">HIGH</span></td>
+    </tr>
+    <tr>
+        <td>22</td>
+        <td>"You claim your physical symptoms improved after separation&mdash;do you have medical records?"</td>
+        <td>Test evidence</td>
+        <td><span class="risk-med">MED</span></td>
+    </tr>
+    <tr>
+        <td>23</td>
+        <td>"Daniel invited you for visits after separation, correct? Does an abuser do that?"</td>
+        <td>Create contradiction</td>
+        <td><span class="risk-med">MED</span></td>
+    </tr>
+</table>
+
+<div class="strategy-box">
+<strong>Defense Strategy:</strong> Explain coercive control dynamics without being preachy. "Emotional abuse often involves subtle patterns that escalate over time. I was committed to the children and the marriage, which is why I stayed." Reference that therapist Heather Dryden can speak to couples dynamics.
+</div>
+
+<h3 id="cat-separation">Category 5: The Separation &amp; Visit Incident</h3>
+<table>
+    <tr>
+        <th>#</th>
+        <th>Likely Question</th>
+        <th>Purpose</th>
+        <th>Risk</th>
+    </tr>
+    <tr>
+        <td>24</td>
+        <td>"On November 26, 2024, you refused to leave Daniel's home when asked, correct?"</td>
+        <td>Reframe as her being the aggressor</td>
+        <td><span class="risk-high">HIGH</span></td>
+    </tr>
+    <tr>
+        <td>25</td>
+        <td>"Daniel had to ask you multiple times to leave?"</td>
+        <td>Same</td>
+        <td><span class="risk-med">MED</span></td>
+    </tr>
+    <tr>
+        <td>26</td>
+        <td>"You acknowledge the children were distressed&mdash;was that distress caused by your refusal to leave?"</td>
+        <td>Shift blame</td>
+        <td><span class="risk-high">HIGH</span></td>
+    </tr>
+    <tr>
+        <td>27</td>
+        <td>"Since November 2024, you have had no contact with the children, correct?"</td>
+        <td>Lock in timeline</td>
+        <td><span class="risk-med">MED</span></td>
+    </tr>
+    <tr>
+        <td>28</td>
+        <td>"In over a year without you, have the children suffered any documented harm?"</td>
+        <td>Challenge necessity of visitation</td>
+        <td><span class="risk-high">HIGH</span></td>
+    </tr>
+</table>
+
+<div class="strategy-box">
+<strong>Defense Strategy:</strong> "I was invited in for a scheduled visit. Daniel unexpectedly ordered me to leave in the middle of my time with the children. The children were distressed because they didn't want me to go&mdash;they clung to me as I departed." Emphasize she left when asked, didn't cause a scene.
+</div>
+
+<h3 id="cat-credibility">Category 6: Credibility &amp; Inconsistencies</h3>
+<table>
+    <tr>
+        <th>#</th>
+        <th>Likely Question</th>
+        <th>Purpose</th>
+        <th>Risk</th>
+    </tr>
+    <tr>
+        <td>29</td>
+        <td>"You claim Daniel promised equal partnership&mdash;do you have that in writing?"</td>
+        <td>Test evidence</td>
+        <td><span class="risk-med">MED</span></td>
+    </tr>
+    <tr>
+        <td>30</td>
+        <td>"You allege Daniel 'went to the bank in secrecy'&mdash;how do you know if it was secret?"</td>
+        <td>Challenge narrative</td>
+        <td><span class="risk-med">MED</span></td>
+    </tr>
+    <tr>
+        <td>31</td>
+        <td>"In your interrogatories, you couldn't recall transferring any property&mdash;but the condo is in your name?"</td>
+        <td>Test memory/honesty</td>
+        <td><span class="risk-med">MED</span></td>
+    </tr>
+    <tr>
+        <td>32</td>
+        <td>"You listed properties worth nearly $1.4 million as marital property&mdash;what did you contribute to purchase these?"</td>
+        <td>Highlight imbalance</td>
+        <td><span class="risk-high">HIGH</span></td>
+    </tr>
+    <tr>
+        <td>33</td>
+        <td>"You're seeking to divide property you didn't help acquire, correct?"</td>
+        <td>Frame as opportunistic</td>
+        <td><span class="risk-high">HIGH</span></td>
+    </tr>
+</table>
+
+<div class="strategy-box">
+<strong>Defense Strategy:</strong> "Tennessee is an equitable distribution state. Contributions to a marriage aren't limited to financial inputs. I maintained the household, cared for the children, and supported Daniel's ability to manage his business affairs."
+</div>
+
+<h3 id="cat-motive">Category 7: Motive &amp; Self-Interest</h3>
+<table>
+    <tr>
+        <th>#</th>
+        <th>Likely Question</th>
+        <th>Purpose</th>
+        <th>Risk</th>
+    </tr>
+    <tr>
+        <td>34</td>
+        <td>"You're seeking alimony from Daniel, correct?"</td>
+        <td>Establish financial motive</td>
+        <td><span class="risk-med">MED</span></td>
+    </tr>
+    <tr>
+        <td>35</td>
+        <td>"Before full-time employment in July 2025, you were largely financially dependent on Daniel?"</td>
+        <td>Same</td>
+        <td><span class="risk-med">MED</span></td>
+    </tr>
+    <tr>
+        <td>36</td>
+        <td>"If you obtain visitation, will you seek child support?"</td>
+        <td>Future motive</td>
+        <td><span class="risk-med">MED</span></td>
+    </tr>
+    <tr>
+        <td>37</td>
+        <td>"This Guardian ad Litem motion&mdash;who would pay for that?"</td>
+        <td>Show cost burden</td>
+        <td><span class="risk-med">MED</span></td>
+    </tr>
+    <tr>
+        <td>38</td>
+        <td>"You want access to children you have no legal relationship with, whose father opposes it&mdash;why?"</td>
+        <td>Force emotional answer</td>
+        <td><span class="risk-high">HIGH</span></td>
+    </tr>
+</table>
+
+<div class="strategy-box">
+<strong>Defense Strategy:</strong> "I love Henry and Harper. I was their primary caregiver for three years. They called me 'Mommy.' My interest is their emotional wellbeing and continued attachment to someone who has been central to their lives."
+</div>
+
+<h2 id="high-risk-qa">V. Mock Q&amp;A for High-Risk Questions</h2>
+
+<p>The following are scripted responses for the highest-risk questions. These should be practiced but delivered naturally, not memorized verbatim.</p>
+
+<div class="qa-section">
+<h4>Question 1: "You never adopted Henry and Harper, correct?"</h4>
+<p class="question">Q: You never adopted Henry and Harper, correct?</p>
+<p class="answer">A: That's correct. A formal adoption was never completed.</p>
+<p class="rationale"><strong>Rationale:</strong> Don't fight the fact. A simple acknowledgment prevents follow-up attacks. If they press further:</p>
+
+<p class="question">Q: So you have no legal parental rights to these children?</p>
+<p class="answer">A: I don't have the legal status of an adoptive parent. However, I functioned as their mother for three years with Daniel's full encouragement. I lived with them, cared for them daily, and they called me "Mommy."</p>
+</div>
+
+<div class="qa-section">
+<h4>Question 4: "Daniel says you avoided adoption to avoid responsibility. Is that accurate?"</h4>
+<p class="question">Q: Daniel says you avoided adoption to avoid responsibility. Is that accurate?</p>
+<p class="answer">A: No, that's not accurate. I was actively researching adoption options that would prioritize the children's best interests. I took on full responsibility for their daily care, their medical advocacy, and their developmental needs throughout our marriage&mdash;all without the legal protections adoption would have provided me.</p>
+<p class="rationale"><strong>Rationale:</strong> Directly deny the characterization, then pivot to evidence of actual responsibility taken. This reframes "no adoption" as her being vulnerable, not avoidant.</p>
+</div>
+
+<div class="qa-section">
+<h4>Question 6: "How much money did you contribute to the children's expenses?"</h4>
+<p class="question">Q: How much money did you contribute to the children's expenses?</p>
+<p class="answer">A: Our household operated with shared finances. I used the family credit card and bank account for the children's needs, which Daniel and I had agreed to. My direct monetary earnings during the marriage were limited because I was serving as the primary caregiver for the children&mdash;a role that allowed Daniel to manage his business and other affairs.</p>
+
+<p class="question">Q: So your direct financial contribution was essentially zero?</p>
+<p class="answer">A: My direct cash deposits were minimal, that's true. But in a marriage, contributions aren't only measured in dollars. I contributed thousands of hours of caregiving, coordinated their medical care, managed the household, handled their school activities, and provided the daily parenting that these children needed.</p>
+<p class="rationale"><strong>Rationale:</strong> Acknowledge the financial reality but immediately reframe to non-monetary contributions. Don't be defensive about low income.</p>
+</div>
+
+<div class="qa-section">
+<h4>Question 11: "You claim Daniel is neglectful&mdash;do you have any CPS reports?"</h4>
+<p class="question">Q: You claim Daniel is neglectful&mdash;do you have any CPS reports?</p>
+<p class="answer">A: I did not file a CPS report. My concerns were about patterns of failing to follow through on professional recommendations&mdash;things like early intervention services that were recommended but not pursued. These aren't necessarily CPS-level issues, but they are concerns about the children's developmental wellbeing.</p>
+
+<p class="question">Q: So no government agency has ever found Daniel to be neglectful?</p>
+<p class="answer">A: Not that I'm aware of.</p>
+<p class="rationale"><strong>Rationale:</strong> Concede the point cleanly, but distinguish between CPS-level abuse and developmental neglect. Don't overreach.</p>
+</div>
+
+<div class="qa-section">
+<h4>Question 13: "If Daniel was so neglectful, why did you stay for three years?"</h4>
+<p class="question">Q: If Daniel was so neglectful, why did you stay for three years?</p>
+<p class="answer">A: I stayed because I loved the children and I was committed to making the marriage work. I also believed that my presence was helping the children&mdash;that I was filling gaps in their care. Leaving would have meant abandoning children I had come to love as my own.</p>
+<p class="rationale"><strong>Rationale:</strong> This question is a classic trap. The answer reframes staying as commitment to the children, not tolerance of abuse. It also plants the seed that her presence was beneficial.</p>
+</div>
+
+<div class="qa-section">
+<h4>Question 14: "You claim a child screamed they wanted to die&mdash;did you report this to anyone?"</h4>
+<p class="question">Q: You claim a child screamed they wanted to die&mdash;did you report this to anyone?</p>
+<p class="answer">A: I discussed my concerns about the children's emotional state with Daniel on multiple occasions. I also raised these issues with our couples therapist, Heather Dryden. I advocated for the children to receive additional therapeutic support.</p>
+
+<p class="question">Q: But you didn't call the police or CPS?</p>
+<p class="answer">A: No. At the time, I was working within the family to address these concerns. I believed that advocating for therapy and additional support was the appropriate response.</p>
+<p class="rationale"><strong>Rationale:</strong> Show that she did take action&mdash;just not formal reporting. Reference a witness (therapist) who can corroborate.</p>
+</div>
+
+<div class="qa-section">
+<h4>Question 18: "Daniel says the children are 'unharmed and thriving' since separation. Do you dispute this?"</h4>
+<p class="question">Q: Daniel says the children are 'unharmed and thriving' since separation. Do you dispute this?</p>
+<p class="answer">A: I hope the children are doing well. I haven't been allowed to see them for over a year, so I can't speak to their current state from personal observation. What I can say is that abruptly severing an attachment bond with a primary caregiver&mdash;which is what happened&mdash;is recognized by child development experts as harmful to children, even if the harm isn't immediately visible.</p>
+<p class="rationale"><strong>Rationale:</strong> Avoid claiming knowledge she doesn't have. Pivot to expert consensus on attachment disruption. This plants seeds for expert testimony later.</p>
+</div>
+
+<div class="qa-section">
+<h4>Question 20: "You continued living with Daniel for three years after this alleged abuse began?"</h4>
+<p class="question">Q: You continued living with Daniel for three years after this alleged abuse began?</p>
+<p class="answer">A: I did. Emotional abuse and coercive control often involve patterns that escalate gradually. I was committed to the marriage and to the children. I also want to be clear&mdash;I'm not claiming Daniel physically harmed me or the children. My concerns are about patterns of manipulation, broken promises, and decisions that weren't in the children's best interest.</p>
+<p class="rationale"><strong>Rationale:</strong> Don't overstate the abuse claims. Narrowing the scope makes her more credible and harder to attack.</p>
+</div>
+
+<div class="qa-section">
+<h4>Question 24: "On November 26, 2024, you refused to leave Daniel's home when asked, correct?"</h4>
+<p class="question">Q: On November 26, 2024, you refused to leave Daniel's home when asked, correct?</p>
+<p class="answer">A: That's not accurate. Daniel invited me into the home for a scheduled visit with the children. In the middle of that visit, he unexpectedly ordered me to leave. I did leave when he made clear he wanted me to go. The children were visibly distressed and clung to me as I departed.</p>
+
+<p class="question">Q: But you didn't leave immediately when first asked?</p>
+<p class="answer">A: I was in the middle of a visit with children I had raised for three years. When it became clear Daniel was serious, I left. I did not cause a scene or refuse to go.</p>
+<p class="rationale"><strong>Rationale:</strong> Correct the mischaracterization, emphasize she left voluntarily, highlight the children's distress (which supports her case).</p>
+</div>
+
+<div class="qa-section">
+<h4>Question 28: "In over a year without you, have the children suffered any documented harm?"</h4>
+<p class="question">Q: In over a year without you, have the children suffered any documented harm?</p>
+<p class="answer">A: I don't have access to information about the children's current wellbeing because I've been completely cut off from them. I can't speak to documentation I haven't seen. What I know from child development research is that disrupting established attachment bonds causes harm&mdash;sometimes harm that manifests over time rather than immediately.</p>
+<p class="rationale"><strong>Rationale:</strong> Turn the lack of information into a point about being cut off. Reference general expertise without overclaiming specific knowledge.</p>
+</div>
+
+<div class="qa-section">
+<h4>Question 32: "You listed properties worth nearly $1.4 million as marital property&mdash;what did you contribute to purchase these?"</h4>
+<p class="question">Q: You listed properties worth nearly $1.4 million as marital property&mdash;what did you contribute to purchase these?</p>
+<p class="answer">A: During our marriage, Daniel consistently represented that all assets were jointly owned&mdash;he referred to them as "ours" and told me my name was on the accounts as proof of our equal partnership. I relied on those representations. As for my contributions, I maintained the household, provided full-time childcare, and managed the rental property&mdash;all of which enabled Daniel to manage his business affairs and preserve these assets.</p>
+<p class="rationale"><strong>Rationale:</strong> Reference Daniel's representations (potential estoppel argument), and emphasize that homemaker contributions have legal value in equitable distribution.</p>
+</div>
+
+<div class="qa-section">
+<h4>Question 38: "You want access to children you have no legal relationship with, whose father opposes it&mdash;why?"</h4>
+<p class="question">Q: You want access to children you have no legal relationship with, whose father opposes it&mdash;why?</p>
+<p class="answer">A: Because I love Henry and Harper, and they love me. I was their primary caregiver for three years. They called me "Mommy." Daniel encouraged that relationship and those bonds. Now he's asking the court to pretend those three years didn't happen. I'm asking for the opportunity to maintain a relationship that is important to these children's emotional wellbeing&mdash;not to replace Daniel as their parent, but to remain a stable, loving presence in their lives.</p>
+<p class="rationale"><strong>Rationale:</strong> This is the emotional core of her case. Lead with love, reference the children's perspective, and make clear she's not seeking to displace Daniel.</p>
+</div>
+
+<h2 id="medium-risk-qa">VI. Mock Q&amp;A for Medium-Risk Questions</h2>
+
+<p>These questions are less dangerous but still require careful handling. They often set up follow-up attacks or try to establish facts that will be used later.</p>
+
+<h3>Category 1: Adoption Steps</h3>
+
+<div class="qa-section">
+<h4>Question 3: "What steps did you actually take toward adoption?"</h4>
+<p class="question">Q: What steps did you actually take toward adoption?</p>
+<p class="answer">A: I researched Tennessee adoption law, including the requirements for stepparent adoption. I looked into what would be required given that the children's biological mother was deceased. I discussed with Daniel at various points how to approach this in a way that would honor Rachel's memory while also providing the children with legal security.</p>
+
+<p class="question">Q: Did you ever hire an attorney for adoption?</p>
+<p class="answer">A: No, we did not get to that stage.</p>
+
+<p class="question">Q: Did you ever file any paperwork with the court?</p>
+<p class="answer">A: No.</p>
+<p class="rationale"><strong>Rationale:</strong> Be honest about what was and wasn't done. The research and conversations show intent. Don't overstate or invent steps that didn't happen.</p>
+</div>
+
+<h3>Category 2: Income &amp; Financial Dependence</h3>
+
+<div class="qa-section">
+<h4>Question 7: "You earned approximately $2,600 in 2022, correct?"</h4>
+<p class="question">Q: You earned approximately $2,600 in 2022, correct?</p>
+<p class="answer">A: That's approximately correct for my self-employment income that year, yes.</p>
+
+<p class="question">Q: And in 2023, it was even less&mdash;about $1,600?</p>
+<p class="answer">A: That sounds right. My direct earning capacity was limited because I was serving as the primary caregiver in the household.</p>
+<p class="rationale"><strong>Rationale:</strong> Confirm the numbers matter-of-factly. Don't be defensive. The caregiver framing explains the low income without excuses.</p>
+</div>
+
+<div class="qa-section">
+<h4>Question 9: "You used Daniel's credit card for purchases, correct?"</h4>
+<p class="question">Q: You used Daniel's credit card for purchases, correct?</p>
+<p class="answer">A: I was an authorized user on a family credit card, yes. Daniel added me to that account and encouraged me to use it for household and children's expenses. That was our agreed arrangement.</p>
+
+<p class="question">Q: But the account was in his name and paid from his funds?</p>
+<p class="answer">A: The account originated with Daniel, yes. It was paid from accounts we both had access to, which Daniel had described as our shared family finances.</p>
+<p class="rationale"><strong>Rationale:</strong> Emphasize this was an agreed arrangement, not her taking advantage. Reference Daniel's representations about shared finances.</p>
+</div>
+
+<h3>Category 3: Basic Care Questions</h3>
+
+<div class="qa-section">
+<h4>Question 16: "The children are enrolled in school, correct?"</h4>
+<p class="question">Q: The children are enrolled in school, correct?</p>
+<p class="answer">A: Yes, they were enrolled in school during our marriage. I assume they still are, though I have no current information about them.</p>
+<p class="rationale"><strong>Rationale:</strong> Simple confirmation. The second sentence subtly highlights her being cut off from information.</p>
+</div>
+
+<div class="qa-section">
+<h4>Question 17: "They have a pediatrician, correct?"</h4>
+<p class="question">Q: They have a pediatrician, correct?</p>
+<p class="answer">A: Yes. During our marriage, I was often the one who scheduled and took them to their appointments.</p>
+<p class="rationale"><strong>Rationale:</strong> Confirm the fact but pivot to her involvement. This supports her caregiver role.</p>
+</div>
+
+<h3>Category 4: Abuse Claims &amp; Documentation</h3>
+
+<div class="qa-section">
+<h4>Question 19: "You allege emotional abuse&mdash;did you ever seek a protection order?"</h4>
+<p class="question">Q: You allege emotional abuse&mdash;did you ever seek a protection order?</p>
+<p class="answer">A: No, I did not. The patterns I experienced were more subtle&mdash;manipulation, broken promises, financial control, unpredictable emotional responses. These aren't the kinds of things that typically result in protection orders, but they made for an unhealthy marriage.</p>
+<p class="rationale"><strong>Rationale:</strong> Acknowledge the lack of formal action while explaining why. Don't overstate the abuse claims.</p>
+</div>
+
+<div class="qa-section">
+<h4>Question 22: "You claim your physical symptoms improved after separation&mdash;do you have medical records?"</h4>
+<p class="question">Q: You claim your physical symptoms improved after separation&mdash;do you have medical records documenting this?</p>
+<p class="answer">A: I can speak to my own experience. I had digestive issues and other stress-related symptoms during the marriage that improved significantly after the separation. Whether I have specific medical records documenting the before and after, I would need to check with my healthcare providers.</p>
+
+<p class="question">Q: So you don't have medical documentation proving the marriage caused these symptoms?</p>
+<p class="answer">A: I'm not claiming to have medical proof of causation. I'm describing my personal experience of stress-related symptoms that improved when I was no longer in the marital environment.</p>
+<p class="rationale"><strong>Rationale:</strong> Don't overclaim. Stick to personal experience without asserting medical proof you may not have.</p>
+</div>
+
+<div class="qa-section">
+<h4>Question 23: "Daniel invited you for visits after separation, correct? Does an abuser do that?"</h4>
+<p class="question">Q: Daniel invited you for visits with the children after separation, correct?</p>
+<p class="answer">A: He did allow some visits initially, yes.</p>
+
+<p class="question">Q: Does an abuser typically invite their victim to visit?</p>
+<p class="answer">A: I think the question oversimplifies the dynamics. Daniel's behavior wasn't consistent&mdash;he would offer visits, then revoke them. He would invite me over, then suddenly order me to leave. That unpredictability was part of the pattern I experienced.</p>
+<p class="rationale"><strong>Rationale:</strong> Don't take the bait on the rhetorical question. Reframe to show the inconsistency, which actually supports her claims.</p>
+</div>
+
+<h3>Category 5: The Separation Details</h3>
+
+<div class="qa-section">
+<h4>Question 25: "Daniel had to ask you multiple times to leave?"</h4>
+<p class="question">Q: Daniel had to ask you multiple times to leave?</p>
+<p class="answer">A: I don't recall the exact number of times. What I remember is that he invited me for a visit, the visit was proceeding normally, and then he suddenly demanded I leave in the middle of my time with the children. I was surprised by the abruptness, but I did leave.</p>
+<p class="rationale"><strong>Rationale:</strong> "I don't recall the exact number" is honest. Focus on the abruptness and the fact that she complied.</p>
+</div>
+
+<div class="qa-section">
+<h4>Question 27: "Since November 2024, you have had no contact with the children, correct?"</h4>
+<p class="question">Q: Since November 2024, you have had no contact with the children, correct?</p>
+<p class="answer">A: That's correct. Daniel has not permitted any contact since that date.</p>
+
+<p class="question">Q: Have you attempted to contact them?</p>
+<p class="answer">A: I've requested visitation through my attorney. I've respected the legal process rather than attempting contact that Daniel has made clear he doesn't want.</p>
+<p class="rationale"><strong>Rationale:</strong> Confirm the timeline. Show she's being respectful of legal boundaries, not aggressive or boundary-violating.</p>
+</div>
+
+<h3>Category 6: Property &amp; Financial Claims</h3>
+
+<div class="qa-section">
+<h4>Question 29: "You claim Daniel promised equal partnership&mdash;do you have that in writing?"</h4>
+<p class="question">Q: You claim Daniel promised you an equal partnership in the marriage&mdash;do you have that in writing?</p>
+<p class="answer">A: Not in a formal written agreement, no. But Daniel repeatedly told me throughout our relationship and marriage that we were equal partners, that assets were "ours," and that my name on accounts proved our shared ownership. I relied on those representations.</p>
+
+<p class="question">Q: So it's your word against his?</p>
+<p class="answer">A: These weren't private conversations. Daniel made statements about our equal partnership to friends and family. His public persona was built around egalitarian relationships. And his actions during the marriage&mdash;adding me to accounts, encouraging me to use family finances&mdash;were consistent with those representations until he changed his position during the divorce.</p>
+<p class="rationale"><strong>Rationale:</strong> Acknowledge lack of written documentation but point to consistent behavior and potential witnesses.</p>
+</div>
+
+<div class="qa-section">
+<h4>Question 30: "You allege Daniel 'went to the bank in secrecy'&mdash;how do you know if it was secret?"</h4>
+<p class="question">Q: You allege Daniel "went to the bank in secrecy"&mdash;how do you know if it was secret?</p>
+<p class="answer">A: He didn't tell me he was going or what he was doing there. I learned about it afterward when he mentioned that my name was on accounts. The way it was presented suggested he had done something to benefit us both, but I later learned I was only a signatory, not a joint owner. If it wasn't secret, I would have expected to be involved in those decisions.</p>
+<p class="rationale"><strong>Rationale:</strong> Explain what "secret" means in context&mdash;lack of transparency and involvement, not necessarily hiding.</p>
+</div>
+
+<div class="qa-section">
+<h4>Question 31: "In your interrogatories, you couldn't recall transferring any property&mdash;but the condo is in your name?"</h4>
+<p class="question">Q: In your interrogatories, you said you couldn't recall transferring any property. But the condo at Stringers Ridge is in your name, isn't it?</p>
+<p class="answer">A: The condo was purchased during the marriage and titled in my name, yes. I didn't transfer it to anyone. I understood the question to be asking about transfers I made, not property that was titled to me.</p>
+
+<p class="question">Q: So you do have property in your name worth approximately $229,000?</p>
+<p class="answer">A: The condo is titled in my name, yes. It was purchased with marital funds during the marriage.</p>
+<p class="rationale"><strong>Rationale:</strong> Clarify the interrogatory interpretation. Don't let them suggest you were being deceptive.</p>
+</div>
+
+<h3>Category 7: Motive Questions</h3>
+
+<div class="qa-section">
+<h4>Question 34: "You're seeking alimony from Daniel, correct?"</h4>
+<p class="question">Q: You're seeking alimony from Daniel, correct?</p>
+<p class="answer">A: My counter-complaint includes a request for spousal support, yes. I significantly reduced my earning capacity during the marriage to serve as the primary caregiver for Daniel's children, and Tennessee law recognizes that contribution.</p>
+<p class="rationale"><strong>Rationale:</strong> Confirm directly. Frame it as legally appropriate, not opportunistic.</p>
+</div>
+
+<div class="qa-section">
+<h4>Question 35: "Before full-time employment in July 2025, you were largely financially dependent on Daniel?"</h4>
+<p class="question">Q: Before your full-time employment in July 2025, you were largely financially dependent on Daniel, weren't you?</p>
+<p class="answer">A: During the marriage, we operated as a family unit with shared finances. Daniel's income supported the household while I provided full-time caregiving. After the separation, I worked to become financially independent and secured full-time employment as soon as I could.</p>
+<p class="rationale"><strong>Rationale:</strong> Reframe "dependence" as the normal arrangement in a single-income household. Highlight her efforts toward independence post-separation.</p>
+</div>
+
+<div class="qa-section">
+<h4>Question 36: "If you obtain visitation, will you seek child support?"</h4>
+<p class="question">Q: If you obtain visitation with these children, will you seek child support?</p>
+<p class="answer">A: I'm not seeking custody or child support. I'm seeking the opportunity to maintain a relationship with children I helped raise. This is about the children's emotional wellbeing, not financial support.</p>
+<p class="rationale"><strong>Rationale:</strong> Clearly separate visitation from financial claims. This undermines the "financial motive" argument.</p>
+</div>
+
+<div class="qa-section">
+<h4>Question 37: "This Guardian ad Litem motion&mdash;who would pay for that?"</h4>
+<p class="question">Q: This Guardian ad Litem motion&mdash;who would pay for that if the court grants it?</p>
+<p class="answer">A: Typically the cost would be shared by the parties, allocated by the court based on ability to pay. I understand it's an expense. But the purpose of a Guardian ad Litem is to ensure the children's interests are independently represented. Given the conflict between Daniel and me about what's best for the children, I believe that independent voice is important.</p>
+<p class="rationale"><strong>Rationale:</strong> Acknowledge the cost but pivot to the children's interests. This shows she's not frivolously requesting it.</p>
+</div>
+
+<hr style="margin: 40px 0; border: none; border-top: 2px solid #cbd5e0;">
+
+<h2 id="ground-rules">VII. Deposition Ground Rules</h2>
+
+<table class="do-dont-table">
+    <tr>
+        <th style="background-color: #c6f6d5;">DO</th>
+        <th style="background-color: #fed7d7;">DON'T</th>
+    </tr>
+    <tr>
+        <td>Answer only what's asked</td>
+        <td>Volunteer additional information</td>
+    </tr>
+    <tr>
+        <td>Say "I don't recall" if true</td>
+        <td>Guess or speculate</td>
+    </tr>
+    <tr>
+        <td>Stay calm and factual</td>
+        <td>Get emotional or defensive</td>
+    </tr>
+    <tr>
+        <td>Ask for clarification on confusing questions</td>
+        <td>Assume you understand compound questions</td>
+    </tr>
+    <tr>
+        <td>Take breaks if needed</td>
+        <td>Let fatigue cause mistakes</td>
+    </tr>
+    <tr>
+        <td>Listen to the entire question before answering</td>
+        <td>Interrupt or anticipate</td>
+    </tr>
+    <tr>
+        <td>Correct mistakes immediately</td>
+        <td>Let inaccurate statements stand</td>
+    </tr>
+    <tr>
+        <td>Look at documents carefully before answering about them</td>
+        <td>React to documents without reading them</td>
+    </tr>
+</table>
+
+<h3>Common Traps to Avoid</h3>
+
+<div class="warning-box">
+<p><strong>The Silence Trap:</strong> After you answer, opposing counsel stays quiet. <em>Don't fill the silence with more information.</em></p>
+</div>
+
+<div class="warning-box">
+<p><strong>The Friendly Approach:</strong> Lentz may start cordial to lower your guard. <em>Stay consistent regardless of tone.</em></p>
+</div>
+
+<div class="warning-box">
+<p><strong>The Document Surprise:</strong> "I'm showing you Exhibit A..." <em>Stay calm, read carefully, don't react hastily.</em></p>
+</div>
+
+<div class="warning-box">
+<p><strong>The "Isn't it true" Setup:</strong> These are leading questions designed to lock in harmful admissions. <em>It's okay to say "That's not accurate" or "That's incomplete."</em></p>
+</div>
+
+<div class="warning-box">
+<p><strong>The Summary Trap:</strong> "So what you're saying is..." followed by a distorted version of your testimony. <em>Correct any mischaracterization immediately.</em></p>
+</div>
+
+<h2 id="summary">VIII. Summary of Jessie's Position</h2>
+
+<h3>Strengths</h3>
+<ul>
+    <li>Three years of documented caregiving</li>
+    <li>Daniel's own interrogatory admissions supporting her role</li>
+    <li>Named witnesses who observed her with the children (Kathleen Gleason, Larry LaPlue, Ruth Hobbs)</li>
+    <li>Children's established attachment (called her "Mommy")</li>
+    <li>Evidence Daniel resisted professional recommendations for children</li>
+    <li>Daniel's representations about shared ownership during marriage</li>
+</ul>
+
+<h3>Vulnerabilities</h3>
+<ul>
+    <li>Never adopted &rarr; no legal parental rights</li>
+    <li>Minimal direct financial contribution</li>
+    <li>No formal reports of abuse/neglect</li>
+    <li>Over 1 year without contact, children allegedly thriving</li>
+    <li>Statutory presumption favors Daniel's parental decisions under T.C.A. &sect; 36-6-303(c)</li>
+</ul>
+
+<div class="info-box">
+<strong>Key Legal Hurdle:</strong> T.C.A. &sect; 36-6-303 requires proving "substantial harm" from denial of visitation&mdash;a high bar when the biological parent opposes contact. Jessie's best path forward is demonstrating that the established attachment bond, the children's own expressed wishes, and expert opinion on attachment disruption collectively meet the "extraordinary circumstances" standard.
+</div>
+
+<h2 id="documents">IX. Documents to Review Before Deposition</h2>
+
+<ul>
+    <li>Her own interrogatory responses (for consistency)</li>
+    <li>Daniel's interrogatory responses (his admissions about her role)</li>
+    <li>Text messages and emails she plans to rely on</li>
+    <li>Any medical records for the children she has access to</li>
+    <li>Timeline of key events in the marriage and separation</li>
+    <li>Any communications about adoption discussions</li>
+    <li>Bank statements showing her use of family accounts</li>
+</ul>
+
+<hr>
+
+<p style="text-align: center; color: #718096; margin-top: 40px;">
+<em>Prepared for deposition preparation purposes only. This document is protected by attorney-client privilege and work product doctrine.</em>
+</p>
+
+</body>
+</html>
